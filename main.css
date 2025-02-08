@@ -1,13 +1,279 @@
+:root {
+    --tokyo-bg: #1a1b26;
+    --tokyo-fg: #a9b1d6;
+    --tokyo-accent: #7aa2f7;
+    --tokyo-purple: #9d7cd8;
+    --tokyo-green: #9ece6a;
+    --tokyo-card: #24283b;
+}
+
+body {
+    background-color: var(--tokyo-bg);
+    color: var(--tokyo-fg);
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'jetbrains', sans-serif;
+}
+
 @font-face {
-    font-family: 'CustomFontName';
-    src: url('fonts/Press_Start_2P/PressStart2P-Regular.ttf') format('woff2'),
-         
-   
-  }
-  
-  /* Applying the font */
-  .iam {
-    font-family: 'CustomFontName', sans-serif; /* Use the custom font */
-    /* font-size: 14px; */
-  }
-  
+    font-family: 'jetbrains';
+    src: url(fonts/jetbrains/JetBrainsMono-VariableFont_wght.ttf);
+}
+
+/* Video Background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.15;
+}
+
+
+.navbar {
+    background-color: rgba(26, 27, 38, 0.85) !important;
+    /* Semi-transparent */
+    backdrop-filter: blur(10px);
+    /* Glassmorphism effect */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Navbar Scroll Effect */
+.navbar.scrolled {
+    background-color: rgba(26, 27, 38, 0.95) !important;
+    /* Darker on scroll */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Links */
+.nav-link {
+    color: var(--tokyo-fg) !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--tokyo-accent) !important;
+}
+
+
+/* Cards Styling */
+.card {
+    background-color: var(--tokyo-card);
+    border: 1px solid var(--tokyo-purple);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(122, 162, 247, 0.2);
+}
+
+/* Text Animation */
+.changing-text {
+    color: var(--tokyo-accent);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.changing-text.visible {
+    opacity: 1;
+}
+
+/* Form Styling */
+.form-control {
+    background-color: var(--tokyo-card);
+    border-color: var(--tokyo-purple);
+    color: var(--tokyo-fg);
+}
+
+.form-control:focus {
+    background-color: var(--tokyo-card);
+    border-color: var(--tokyo-accent);
+    color: var(--tokyo-fg);
+    box-shadow: 0 0 0 0.25rem rgba(122, 162, 247, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--tokyo-accent);
+    border-color: var(--tokyo-accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--tokyo-purple);
+    border-color: var(--tokyo-purple);
+}
+
+/* Icon Links */
+.icon-link {
+    color: var(--tokyo-fg);
+    transition: color 0.3s;
+}
+
+.icon-link:hover {
+    color: var(--tokyo-accent);
+}
+
+/* Custom Classes */
+.iam {
+    color: var(--tokyo-green);
+}
+
+hr {
+    border-color: var(--tokyo-purple);
+    opacity: 0.2;
+}
+
+/* Tech Stack Styling */
+.skill-card {
+    background: rgba(36, 40, 59, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--tokyo-purple);
+}
+
+.tech-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.tech-item i {
+    font-size: 2rem;
+    color: var(--tokyo-accent);
+    margin-bottom: 0.5rem;
+}
+
+/* Project Cards */
+.project-card {
+    background: rgba(36, 40, 59, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--tokyo-purple);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.tech-stack .badge {
+    background-color: var(--tokyo-accent);
+    color: var(--tokyo-bg);
+    margin-right: 0.5rem;
+}
+
+.btn-outline-primary {
+    color: var(--tokyo-accent);
+    border-color: var(--tokyo-accent);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--tokyo-accent);
+    color: var(--tokyo-bg);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--tokyo-bg);
+    /* Background matches page */
+    border-left: 1px solid var(--tokyo-card);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--tokyo-purple);
+    /* Purple scrollbar */
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--tokyo-accent);
+    /* Changes on hover */
+}
+
+/* Contact Section Styling */
+#contact {
+    padding: 2rem;
+    text-align: center;
+}
+
+.contact-card {
+    background: rgba(36, 40, 59, 0.8);
+    /* Glassmorphism Effect */
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--tokyo-purple);
+    padding: 2rem;
+    margin-top: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(122, 162, 247, 0.2);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* Allows icons to wrap in smaller screen sizes */
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+h2 {
+    color: var(--tokyo-green);
+    margin-bottom: 1rem;
+}
+
+.contact-form {
+    background: rgba(36, 40, 59, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+input, textarea {
+    background: #1a1b26;
+    color: #c0caf5;
+    border: 1px solid #414868;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+button {
+    background: #7aa2f7;
+    color: #1a1b26;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+button:hover {
+    background: #bb9af7;
+}
