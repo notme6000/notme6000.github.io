@@ -1,210 +1,745 @@
-<!-- Add dark theme class to html tag -->
-<html lang="en" data-bs-theme="dark" class="tokyo-night">
-
-<!-- Update head section -->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>notme6000</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="main.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CyberSec Developer | Portfolio</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<style>
+		/* Custom styles for themes */
+		.theme-nordic {
+			--bg-primary: #2E3440;
+			--bg-secondary: #3B4252;
+			--text-primary: #E5E9F0;
+			--text-secondary: #D8DEE9;
+			--accent: #88C0D0;
+			--accent-dark: #5E81AC;
+			--card-bg: #434C5E;
+		}
+
+		.theme-tokyo-night {
+			--bg-primary: #1A1B26;
+			--bg-secondary: #24283B;
+			--text-primary: #A9B1D6;
+			--text-secondary: #CFC9C2;
+			--accent: #7AA2F7;
+			--accent-dark: #BB9AF7;
+			--card-bg: #292E42;
+		}
+
+		.theme-white {
+			--bg-primary: #FFFFFF;
+			--bg-secondary: #F3F4F6;
+			--text-primary: #111827;
+			--text-secondary: #374151;
+			--accent: #3B82F6;
+			--accent-dark: #1D4ED8;
+			--card-bg: #E5E7EB;
+		}
+
+		.theme-dark {
+			--bg-primary: #0F172A;
+			--bg-secondary: #1E293B;
+			--text-primary: #F8FAFC;
+			--text-secondary: #CBD5E1;
+			--accent: #6366F1;
+			--accent-dark: #4F46E5;
+			--card-bg: #334155;
+		}
+
+		body {
+			background-color: var(--bg-primary);
+			color: var(--text-primary);
+			transition: all 0.3s ease;
+		}
+
+		.bg-primary {
+			background-color: var(--bg-primary);
+		}
+
+		.bg-secondary {
+			background-color: var(--bg-secondary);
+		}
+
+		.text-primary {
+			color: var(--text-primary);
+		}
+
+		.text-secondary {
+			color: var(--text-secondary);
+		}
+
+		.accent {
+			color: var(--accent);
+		}
+
+		.bg-accent {
+			background-color: var(--accent);
+		}
+
+		.border-accent {
+			border-color: var(--accent);
+		}
+
+		.card-bg {
+			background-color: var(--card-bg);
+		}
+
+		.theme-selector {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			z-index: 100;
+		}
+
+		.theme-btn {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		.theme-options {
+			position: absolute;
+			bottom: 60px;
+			right: 0;
+			display: none;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		.theme-option {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			cursor: pointer;
+			border: 2px solid white;
+		}
+
+		.theme-nordic-btn {
+			background: linear-gradient(135deg, #2E3440 50%, #88C0D0 50%);
+		}
+
+		.theme-tokyo-night-btn {
+			background: linear-gradient(135deg, #1A1B26 50%, #7AA2F7 50%);
+		}
+
+		.theme-white-btn {
+			background: linear-gradient(135deg, #FFFFFF 50%, #3B82F6 50%);
+		}
+
+		.theme-dark-btn {
+			background: linear-gradient(135deg, #0F172A 50%, #6366F1 50%);
+		}
+
+		.skill-bar {
+			height: 8px;
+			border-radius: 4px;
+			background-color: var(--bg-secondary);
+			overflow: hidden;
+		}
+
+		.skill-progress {
+			height: 100%;
+			background-color: var(--accent);
+			transition: width 1s ease-in-out;
+		}
+
+		.project-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+		}
+
+		.nav-link:hover {
+			color: var(--accent);
+		}
+
+		.cert-badge {
+			position: relative;
+		}
+
+		.cert-badge::after {
+			content: 'Verified';
+			position: absolute;
+			transform: translateX(-50%);
+			top: 100%;
+			left: 50%;
+			background-color: var(--accent-dark);
+			margin-top: 4px;
+			color: white;
+			font-size: 10px;
+			padding: 2px 5px;
+			border-radius: 10px;
+		}
+	</style>
 </head>
 
-<body>
-    <!-- Add video background -->
-    <video class="video-background" autoplay muted loop playsinline>
-        <source src="bg-live/Anime Girl  [Live Wallpaper] [C38l7rAZicE].webm" type="video/mp4">
-    </video>
+<body class="theme-nordic">
+	<!-- Theme Selector -->
+	<div class="theme-selector">
+		<div class="theme-options" id="themeOptions">
+			<div class="theme-option theme-nordic-btn" onclick="changeTheme('nordic')"></div>
+			<div class="theme-option theme-tokyo-night-btn" onclick="changeTheme('tokyo-night')"></div>
+			<div class="theme-option theme-white-btn" onclick="changeTheme('white')"></div>
+			<div class="theme-option theme-dark-btn" onclick="changeTheme('dark')"></div>
+		</div>
+		<div class="theme-btn bg-accent text-white" onclick="toggleThemeOptions()">
+			<i class="fas fa-palette"></i>
+		</div>
+	</div>
 
-    <!-- Update navbar classes -->
-    
-        <nav class="navbar navbar-expand-lg sticky-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">notme6000</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Socials</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+	<!-- Navigation -->
+	<nav class="bg-secondary py-4 px-6 shadow-lg sticky top-0 z-50">
+		<div class="container mx-auto flex justify-between items-center">
+			<div class="text-2xl font-bold accent">Jithu Suresh</div>
+			<div class="hidden md:flex space-x-8">
+				<a href="#home" class="nav-link text-primary hover:text-accent transition">Home</a>
+				<a href="#about" class="nav-link text-primary hover:text-accent transition">About</a>
+				<a href="#skills" class="nav-link text-primary hover:text-accent transition">Skills</a>
+				<a href="#projects"
+					class="nav-link text-primary hover:text-accent transition">Projects</a>
+				<a href="#contact"
+					class="nav-link text-primary hover:text-accent transition">Contact</a>
+			</div>
+			<div class="md:hidden">
+				<button id="mobileMenuBtn" class="text-primary">
+					<i class="fas fa-bars text-2xl"></i>
+				</button>
+			</div>
+		</div>
+		<!-- Mobile Menu -->
+		<div id="mobileMenu" class="hidden md:hidden bg-secondary py-4 px-6 absolute w-full left-0">
+			<div class="flex flex-col space-y-4">
+				<a href="#home" class="nav-link text-primary hover:text-accent transition">Home</a>
+				<a href="#about" class="nav-link text-primary hover:text-accent transition">About</a>
+				<a href="#skills" class="nav-link text-primary hover:text-accent transition">Skills</a>
+				<a href="#projects"
+					class="nav-link text-primary hover:text-accent transition">Projects</a>
+				<a href="#contact"
+					class="nav-link text-primary hover:text-accent transition">Contact</a>
+			</div>
+		</div>
+	</nav>
 
-        <!-- Rest of navbar content remains same -->
-    
+	<!-- Hero Section -->
+	<section id="home" class="min-h-screen flex items-center bg-secondary">
+		<div class="container mx-auto px-6 py-20">
+			<div class="flex flex-col md:flex-row items-center">
+				<div class="md:w-1/2 mb-10 md:mb-0">
+					<h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span
+							class="accent">Jithu Suresh</span></h1>
+					<h2 class="text-2xl md:text-3xl mb-6 text-secondary">Developer & Cybersecurity
+						Expert</h2>
+					<p class="text-lg mb-8">Certified Penetration Tester (CPT) and Certified Ethical
+						Hacker (CEH).</p>
+					<div class="flex space-x-4">
+						<a href="#contact"
+							class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition">Hire
+							Me</a>
+						<a href="#projects"
+							class="border-2 border-accent text-accent px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition">View
+							Work</a>
+					</div>
+				</div>
+				<div class="md:w-1/2 flex justify-center">
+					<div class="relative">
+						<div
+							class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent">
+							<img src="assets/jithu.jpeg" alt="Profile"
+								class="w-full h-full object-cover">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <!-- Add wrapper for content -->
-    <div class="content-wrapper">
-        <!-- Update home section -->
-        <div class="container text-center mt-5">
-            <img src="img/image.webp" alt="Round Image" class="rounded-circle profile-image" width="200" height="200">
-            <div class="mt-5 h2 iam">
-                <span>I am a notme6000 </span>
-                <span class="changing-text" id="changingText"></span>
-            </div>
-            <div class="container text-center fw-medium mt-5">
-                <p class="intro-text p-3 rounded">Hi, I'm a passionate web-developer and cybersecurity enthusiast...</p>
-            </div>
-        </div>
+	<!-- About Section -->
+	<section id="about" class="py-20 bg-primary">
+		<div class="container mx-auto px-6">
+			<h2 class="text-3xl font-bold mb-12 text-center accent">About Me</h2>
+			<div class="flex flex-col md:flex-row items-center justify-center">
+				<!--				<div class="md:w-1/3 mb-10 md:mb-0 flex justify-center"> -->
+				<!-- 					<div class="w-64 h-64 rounded-lg overflow-hidden border-2 border-accent"> -->
+				<!-- 						<img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" -->
+				<!-- 							alt="About" class="w-full h-full object-cover"> -->
+				<!-- 					</div> -->
+				<!--				</div> -->
+				<div class="md:w-2/3 md:pl-12">
+					<h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+					<p class="mb-6 text-secondary">I'm a passionate developer with a strong focus on
+						cybersecurity. My journey began with coding and evolved into securing
+						systems against threats. I hold multiple certifications including CPT
+						(Certified Penetration Tester) and CEH (Certified Ethical Hacker), and
+						I'm committed to building secure applications from the ground up.</p>
 
-        <!-- Update skills section -->
-        <div class="container text-center" id="skills">
-            <h2 class="iam mb-5 mt-5"></h2>
-            <div class="container ms-3">
-                <!-- Skills cards structure remains same -->
-                <!-- Tech Stack Section -->
-                <section id="skills" class="py-5">
-                    <div class="container">
-                        <h2 class="text-center iam mb-5">Tech Stack</h2>
-                        <div class="row g-4">
-                            <!-- Frontend -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="skill-card card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center mb-4">Frontend</h5>
-                                        <div class="d-flex flex-wrap gap-3 justify-content-center">
-                                            <div class="tech-item">
-                                                <i class="bi bi-filetype-html"></i>
-                                                <span>HTML</span>
-                                            </div>
-                                            <div class="tech-item">
-                                                <i class="bi bi-filetype-css"></i>
-                                                <span>CSS</span>
-                                            </div>
-                                            <div class="tech-item">
-                                                <i class="bi bi-filetype-js"></i>
-                                                <span>JavaScript</span>
-                                            </div>
-                                            <div class="tech-item">
-                                                <i class="bi bi-bootstrap"></i>
-                                                <span>Bootstrap</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+						<!-- 						<div class="flex items-start"> -->
+						<!-- 							<div class="mr-4 mt-1 accent"> -->
+						<!-- 								<i class="fas fa-laptop-code text-xl"></i> -->
+						<!-- 							</div> -->
+						<!-- 							<div> -->
+						<!-- 								<h4 class="font-semibold mb-2">Development</h4> -->
+						<!-- 								<p class="text-sm text-secondary">Full-stack development -->
+						<!-- 									with security-first approach using modern -->
+						<!-- 									technologies.</p> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<div class="flex items-start">
+							<div class="mr-4 mt-1 accent">
+								<i class="fas fa-shield-alt text-xl"></i>
+							</div>
+							<div>
+								<h4 class="font-semibold mb-2">Security</h4>
+								<p class="text-sm text-secondary">Penetration testing,
+									vulnerability assessment, and security
+									architecture design.</p>
+							</div>
+						</div>
+					</div>
 
-                            <!-- Backend -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="skill-card card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center mb-4">Backend</h5>
-                                        <div class="d-flex flex-wrap gap-3 justify-content-center">
-                                            <div class="tech-item">
-                                                <i class="bi bi-filetype-py"></i>
-                                                <span>Python</span>
-                                            </div>
-                                            <div class="tech-item">
-                                                <i class="bi bi-code-slash"></i>
-                                                <span>C#</span>
-                                            </div>
-                                            <div class="tech-item">
-                                                <i class="bi bi-code-slash"></i>
-                                                <span>C</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+					<div class="flex flex-wrap gap-4">
+						<div
+							class="cert-badge bg-accent-dark text-white px-4 py-2 rounded-full text-sm font-medium">
+							CPT
+						</div>
+						<div
+							class="cert-badge bg-accent-dark text-white px-4 py-2 rounded-full text-sm font-medium">
+							CEH
+						</div>
+						<!-- 						<div -->
+						<!-- 							class="bg-accent-dark text-white px-4 py-2 rounded-full text-sm font-medium"> -->
+						<!-- 							OSCP (In Progress) -->
+						<!-- 						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-                            <!-- Game Development -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="skill-card card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center mb-4">Game Dev</h5>
-                                        <div class="d-flex flex-wrap gap-3 justify-content-center">
-                                            <div class="tech-item">
-                                                <i class="bi bi-controller"></i>
-                                                <span>Godot</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+	<!-- Skills Section -->
+	<section id="skills" class="py-20 bg-secondary">
+		<div class="container mx-auto px-6">
+			<h2 class="text-3xl font-bold mb-12 text-center accent">My Skills</h2>
 
-            </div>
-        </div>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				<!-- Development Skills -->
+				<div class="card-bg p-6 rounded-lg shadow-lg">
+					<h3 class="text-xl font-semibold mb-4 flex items-center">
+						<i class="fas fa-code mr-2 accent"></i>
+						Development
+					</h3>
+					<div class="space-y-4">
+						<!-- 						<div> -->
+						<!-- 							<div class="flex justify-between mb-1"> -->
+						<!-- 								<span>JavaScript/TypeScript</span> -->
+						<!-- 								<span>95%</span> -->
+						<!-- 							</div> -->
+						<!-- 							<div class="skill-bar"> -->
+						<!-- 								<div class="skill-progress" style="width: 95%"></div> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<div>
+							<div class="flex justify-between mb-1">
+								<span>Python</span>
+								<span>90%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="width: 90%"></div>
+							</div>
+						</div>
+						<!-- 						<div> -->
+						<!-- 							<div class="flex justify-between mb-1"> -->
+						<!-- 								<span>React/Node.js</span> -->
+						<!-- 								<span>85%</span> -->
+						<!-- 							</div> -->
+						<!-- 							<div class="skill-bar"> -->
+						<!-- 								<div class="skill-progress" style="width: 85%"></div> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<div>
+							<div class="flex justify-between mb-1">
+								<span>SQL/NoSQL</span>
+								<span>80%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="width: 80%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-        <!-- Update projects section -->
-        <div class="text-center projects-section" id="projects">
-            <section id="projects" class="py-5">
-                <div class="container">
-                    <h2 class="text-center iam mb-5">Projects</h2>
-                    <div class="row g-4">
-        
-                        <!-- Knights Legacy -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="project-card card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">Project MONOLITH</h5>
-                                    <p class="card-text">Project Monolith: A multi-tool hacking suite for vulnerabilities, OSINT, and encryption.</p>
-                                    <div class="tech-stack">
-                                        <span class="badge">HTML</span>
-                                        <span class="badge">CSS</span>
-                                        <span class="badge">JS</span>
-                                        <span class="badge">Python</span>
-                                        <span class="badge">Pywebview</span>
-                                    </div>
-                                    <div class="mt-3">
-                                        <a href="https://github.com/notme6000/project-monolith.git"
-                                            class="btn btn-outline-primary">
-                                            <i class="bi bi-github"></i> View Code
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </section>
-            <!-- Projects content remains same -->
-        </div>
+				<!-- Security Skills -->
+				<div class="card-bg p-6 rounded-lg shadow-lg">
+					<h3 class="text-xl font-semibold mb-4 flex items-center">
+						<i class="fas fa-shield-alt mr-2 accent"></i>
+						Cybersecurity
+					</h3>
+					<div class="space-y-4">
+						<div>
+							<div class="flex justify-between mb-1">
+								<span>Penetration Testing</span>
+								<span>95%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="width: 95%"></div>
+							</div>
+						</div>
+						<div>
+							<div class="flex justify-between mb-1">
+								<span>Vulnerability Assessment</span>
+								<span>90%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="width: 90%"></div>
+							</div>
+						</div>
+						<div>
+							<div class="flex justify-between mb-1">
+								<span>Network Security</span>
+								<span>85%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="width: 85%"></div>
+							</div>
+						</div>
+						<div>
+							<div class="flex justify-between mb-1">
+								<span>Security Architecture</span>
+								<span>80%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="width: 80%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        <!-- Update contact section -->
-        <section id="contact">
-            <h2>Socials</h2>
-            <div class="contact-card">
-                <div class="social-links">
-                    <a href="https://github.com/notme6000" target="_blank">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social-icon"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                        <!-- <img src="path_to_github_logo" alt="GitHub Logo" class="social-icon"> -->
-                    </a>
-                    <a href="https://www.instagram.com/notme_6000/" target="_blank">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social-icon"><title>Instagram</title><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>
-                    </a>
-                    <a href="https://x.com/notmee6000" target="_blank">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social-icon"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
-                    </a>
-                    <a href="https://www.youtube.com/@blindhawk-oh1sx" target="_blank">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social-icon"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navbar = document.querySelector(".navbar");
-            window.addEventListener("scroll", function () {
-                if (window.scrollY > 50) {
-                    navbar.classList.add("scrolled");
-                } else {
-                    navbar.classList.remove("scrolled");
-                }
-            });
-        });
+			<!-- Tools Section -->
+			<div class="mt-12 card-bg p-6 rounded-lg shadow-lg">
+				<h3 class="text-xl font-semibold mb-6 flex items-center">
+					<i class="fas fa-tools mr-2 accent"></i>
+					Tools & Technologies
+				</h3>
+				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+					<div
+						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+						<i class="fab fa-linux text-4xl mb-2 accent"></i>
+						<span>Linux</span>
+					</div>
+					<div
+						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+						<i class="fas fa-terminal text-4xl mb-2 accent"></i>
+						<span>Kali Linux</span>
+					</div>
+					<div
+						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+						<i class="fas fa-network-wired text-4xl mb-2 accent"></i>
+						<span>Wireshark</span>
+					</div>
+					<div
+						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+						<i class="fas fa-bug text-4xl mb-2 accent"></i>
+						<span>Burp Suite</span>
+					</div>
+					<div
+						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+						<i class="fab fa-docker text-4xl mb-2 accent"></i>
+						<span>Docker</span>
+					</div>
+					<div
+						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+						<i class="fab fa-github text-4xl mb-2 accent"></i>
+						<span>github</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    </script>
+	<!-- Projects Section -->
+	<section id="projects" class="py-20 bg-primary">
+		<div class="container mx-auto px-6">
+			<h2 class="text-3xl font-bold mb-12 text-center accent">My Projects</h2>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<!-- Project 1 -->
+				<div
+					class="project-card card-bg rounded-lg overflow-hidden shadow-lg transition duration-300">
+					<div class="h-48 overflow-hidden">
+						<img src="assets/project MONOLITH.png"
+							class="w-full h-full object-cover">
+					</div>
+					<div class="p-6">
+						<h3 class="text-xl font-semibold mb-2">Project Monolith</h3>
+						<p class="text-secondary mb-4">A multi-tool suite for Penetration
+							Testing.</p>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span
+								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Python</span>
+							<span
+								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Javascirpt</span>
+							<span
+								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Pywebview
+							</span>
+						</div>
+						<a href="https://github.com/notme6000/project-monolith.git"
+							class="text-accent font-medium flex items-center">
+							View Project <i class="fas fa-arrow-right ml-2"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- 				<!-- Project 2 -->
+				<!-- 				<div -->
+				<!-- 					class="project-card card-bg rounded-lg overflow-hidden shadow-lg transition duration-300"> -->
+				<!-- 					<div class="h-48 overflow-hidden"> -->
+				<!-- 						<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" -->
+				<!-- 							alt="Vulnerability Scanner" class="w-full h-full object-cover"> -->
+				<!-- 					</div> -->
+				<!-- 					<div class="p-6"> -->
+				<!-- 						<h3 class="text-xl font-semibold mb-2">Automated Vulnerability Scanner -->
+				<!-- 						</h3> -->
+				<!-- 						<p class="text-secondary mb-4">A custom tool that scans web applications -->
+				<!-- 							for common vulnerabilities like XSS, SQLi, and CSRF.</p> -->
+				<!-- 						<div class="flex flex-wrap gap-2 mb-4"> -->
+				<!-- 							<span -->
+				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Python</span> -->
+				<!-- 							<span -->
+				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Selenium</span> -->
+				<!-- 							<span -->
+				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">OWASP -->
+				<!-- 								ZAP</span> -->
+				<!-- 							<span -->
+				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Docker</span> -->
+				<!-- 						</div> -->
+				<!-- 						<a href="#" class="text-accent font-medium flex items-center"> -->
+				<!-- 							View Project <i class="fas fa-arrow-right ml-2"></i> -->
+				<!-- 						</a> -->
+				<!-- 					</div> -->
+				<!-- 				</div> -->
+				<!--  -->
+				<!-- 				<!-- Project 3 -->
+				<!-- 				<div -->
+				<!-- 					class="project-card card-bg rounded-lg overflow-hidden shadow-lg transition duration-300"> -->
+				<!-- 					<div class="h-48 overflow-hidden"> -->
+				<!-- 						<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" -->
+				<!-- 							alt="Secure Banking App" class="w-full h-full object-cover"> -->
+				<!-- 					</div> -->
+				<!-- 					<div class="p-6"> -->
+				<!-- 						<h3 class="text-xl font-semibold mb-2">Secure Banking Application</h3> -->
+				<!-- 						<p class="text-secondary mb-4">A banking application with end-to-end -->
+				<!-- 							encryption, fraud detection, and secure transaction processing. -->
+				<!-- 						</p> -->
+				<!-- 						<div class="flex flex-wrap gap-2 mb-4"> -->
+				<!-- 							<span -->
+				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Java</span> -->
+				<!-- 							<span -->
+				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Spring -->
+				<!-- 								Boot</span> -->
+				<!-- 							<span -->
+				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">AES-256</span> -->
+				<!-- 							<span -->
+				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">PCI -->
+				<!-- 								DSS</span> -->
+				<!-- 						</div> -->
+				<!-- 						<a href="#" class="text-accent font-medium flex items-center"> -->
+				<!-- 							View Project <i class="fas fa-arrow-right ml-2"></i> -->
+				<!-- 						</a> -->
+				<!-- 					</div> -->
+				<!-- 				</div> -->
+			</div>
+
+			<div class="text-center mt-12">
+				<a href="#"
+					class="inline-block border-2 border-accent text-accent px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition">
+					View All Projects
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contact" class="py-20 bg-secondary">
+		<div class="container mx-auto px-6">
+			<h2 class="text-3xl font-bold mb-12 text-center accent">Get In Touch</h2>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+				<div>
+					<h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+					<div class="space-y-6">
+						<div class="flex items-start">
+							<div class="mr-4 mt-1 accent">
+								<i class="fas fa-envelope text-xl"></i>
+							</div>
+							<div>
+								<h4 class="font-medium mb-1">Email</h4>
+								<p class="text-secondary">sureshjithu9400@gmail.com</p>
+							</div>
+						</div>
+						<!-- 						<div class="flex items-start"> -->
+						<!-- 							<div class="mr-4 mt-1 accent"> -->
+						<!-- 								<i class="fas fa-phone-alt text-xl"></i> -->
+						<!-- 							</div> -->
+						<!-- 							<div> -->
+						<!-- 								<h4 class="font-medium mb-1">Phone</h4> -->
+						<!-- 								<p class="text-secondary">+1 (555) 123-4567</p> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+						<!-- 						<div class="flex items-start"> -->
+						<!-- 							<div class="mr-4 mt-1 accent"> -->
+						<!-- 								<i class="fas fa-map-marker-alt text-xl"></i> -->
+						<!-- 							</div> -->
+						<!-- 							<div> -->
+						<!-- 								<h4 class="font-medium mb-1">Location</h4> -->
+						<!-- 								<p class="text-secondary">San Francisco, CA</p> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+					</div>
+
+					<div class="mt-10">
+						<h3 class="text-xl font-semibold mb-6">Follow Me</h3>
+						<div class="flex space-x-4">
+							<a href="https://github.com/notme6000"
+								class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
+								<i class="fab fa-github"></i>
+							</a>
+							<a href="https://www.linkedin.com/in/jithu-suresh-931321274/"
+								class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
+								<i class="fab fa-linkedin-in"></i>
+							</a>
+							<a href="https://x.com/notmee6000"
+								class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
+								<i class="fab fa-twitter"></i>
+							</a>
+							<a href="https://news.ycombinator.com/user?id=akira_satou"
+								class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
+								<i class="fab fa-hacker-news"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+					<form class="space-y-6" action="https://formspree.io/f/mzzvpdlw" method="POST">
+						<div>
+							<label for="name" class="block mb-2">Your Name</label>
+							<input type="text" id="name" name="name"
+								class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent">
+						</div>
+						<div>
+							<label for="email" class="block mb-2">Your Email</label>
+							<input type="email" id="email" name="email"
+								class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent">
+						</div>
+						<div>
+							<label for="subject" class="block mb-2">Subject</label>
+							<input type="text" id="subject" name="subject"
+								class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent">
+						</div>
+						<div>
+							<label for="message" class="block mb-2">Message</label>
+							<textarea id="message" rows="5" name="message"
+								class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+						</div>
+						<button type="submit"
+							class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition w-full">
+							Send Message
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="bg-primary py-8">
+		<div class="container mx-auto px-6">
+			<div class="flex flex-col md:flex-row justify-between items-center">
+				<div class="text-xl font-bold mb-4 md:mb-0 accent">CyberSec Developer</div>
+				<div class="text-secondary text-sm">
+					&copy; 2023 All Rights Reserved | Designed with <i
+						class="fas fa-heart accent"></i> by Me
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		// Theme functionality
+		function changeTheme(theme) {
+			document.body.className = `theme-${theme}`;
+			document.getElementById('themeOptions').style.display = 'none';
+		}
+
+		function toggleThemeOptions() {
+			const themeOptions = document.getElementById('themeOptions');
+			themeOptions.style.display = themeOptions.style.display === 'flex' ? 'none' : 'flex';
+		}
+
+		// Mobile menu functionality
+		document.getElementById('mobileMenuBtn').addEventListener('click', function () {
+			const mobileMenu = document.getElementById('mobileMenu');
+			mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+		});
+
+		// Close mobile menu when clicking a link
+		document.querySelectorAll('#mobileMenu a').forEach(link => {
+			link.addEventListener('click', function () {
+				document.getElementById('mobileMenu').style.display = 'none';
+			});
+		});
+
+		// Animate skill bars on scroll
+		function animateSkills() {
+			const skillBars = document.querySelectorAll('.skill-progress');
+			skillBars.forEach(bar => {
+				const width = bar.style.width;
+				bar.style.width = '0';
+				setTimeout(() => {
+					bar.style.width = width;
+				}, 100);
+			});
+		}
+
+		// Intersection Observer for skill animation
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					animateSkills();
+					observer.unobserve(entry.target);
+				}
+			});
+		}, {threshold: 0.1});
+
+		const skillsSection = document.getElementById('skills');
+		if (skillsSection) {
+			observer.observe(skillsSection);
+		}
+
+		// Smooth scrolling for anchor links
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+				const targetId = this.getAttribute('href');
+				const targetElement = document.querySelector(targetId);
+				if (targetElement) {
+					window.scrollTo({
+						top: targetElement.offsetTop - 80,
+						behavior: 'smooth'
+					});
+				}
+			});
+		});
+	</script>
 </body>
 
 </html>
