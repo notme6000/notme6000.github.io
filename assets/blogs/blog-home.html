@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="../../style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+
+  <body class="theme-nordic">
+
+  <!-- Navigation -->
+	<nav class="bg-secondary py-4 px-6 shadow-lg sticky top-0 z-50">
+		<div class="container mx-auto flex justify-between items-center">
+			<div class="text-2xl font-bold accent">Blogs</div>
+			<div class="hidden md:flex space-x-8">
+				<a href="../../index.html#home" class="nav-link text-primary hover:text-accent transition">Home</a>
+				<a href="../../index.html#about" class="nav-link text-primary hover:text-accent transition">About</a>
+				<a href="../../index.html#skills" class="nav-link text-primary hover:text-accent transition">Skills</a>
+				<a href="../../index.html#projects" class="nav-link text-primary hover:text-accent transition">Projects</a>
+				<a href="../../index.html#contact" class="nav-link text-primary hover:text-accent transition">Contact</a>
+				<a href="#blog" class="nav-link text-primary hover:text-accent transition">Blog</a>
+			</div>
+			<div class="md:hidden">
+				<button id="mobileMenuBtn" class="text-primary">
+					<i class="fas fa-bars text-2xl"></i>
+				</button>
+			</div>
+		</div>
+		<!-- Mobile Menu -->
+		<div id="mobileMenu" class="hidden md:hidden bg-secondary py-4 px-6 absolute w-full left-0">
+			<div class="flex flex-col space-y-4">
+				<a href="../../index.html#home" class="nav-link text-primary hover:text-accent transition">Home</a>
+				<a href="../../index.html#about" class="nav-link text-primary hover:text-accent transition">About</a>
+				<a href="../../index.html#skills" class="nav-link text-primary hover:text-accent transition">Skills</a>
+				<a href="../../index.html#projects"
+					class="nav-link text-primary hover:text-accent transition">Projects</a>
+				<a href="../../index.html#contact"
+					class="nav-link text-primary hover:text-accent transition">Contact</a>
+				<a href="#blogs" class="nav-link text-primary hover:text-accent transition">Blog</a>
+			</div>
+		</div>
+	</nav>
+
+    <section id="projects" class="py-20 bg-primary">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center accent">My Blogs</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="project-card card-bg rounded-lg overflow-hidden shadow-lg transition duration-300">
+            <div class="h-48 overflow-hidden">
+              <img src="../project MONOLITH.png"
+                class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Project Monolith</h3>
+              <p class="text-secondary mb-4">A multi-tool suite for Penetration
+                Testing.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Python</span>
+                <span
+                  class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Javascirpt</span>
+                <span
+                  class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Pywebview
+                </span>
+              </div>
+              <a href="https://github.com/notme6000/project-monolith.git"
+                class="text-accent font-medium flex items-center">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>

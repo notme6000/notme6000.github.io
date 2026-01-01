@@ -6,178 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CyberSec Developer | Portfolio</title>
 	<script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<style>
-		/* Custom styles for themes */
-		.theme-nordic {
-			--bg-primary: #2E3440;
-			--bg-secondary: #3B4252;
-			--text-primary: #E5E9F0;
-			--text-secondary: #D8DEE9;
-			--accent: #88C0D0;
-			--accent-dark: #5E81AC;
-			--card-bg: #434C5E;
-		}
-
-		.theme-tokyo-night {
-			--bg-primary: #1A1B26;
-			--bg-secondary: #24283B;
-			--text-primary: #A9B1D6;
-			--text-secondary: #CFC9C2;
-			--accent: #7AA2F7;
-			--accent-dark: #BB9AF7;
-			--card-bg: #292E42;
-		}
-
-		.theme-white {
-			--bg-primary: #FFFFFF;
-			--bg-secondary: #F3F4F6;
-			--text-primary: #111827;
-			--text-secondary: #374151;
-			--accent: #3B82F6;
-			--accent-dark: #1D4ED8;
-			--card-bg: #E5E7EB;
-		}
-
-		.theme-dark {
-			--bg-primary: #0F172A;
-			--bg-secondary: #1E293B;
-			--text-primary: #F8FAFC;
-			--text-secondary: #CBD5E1;
-			--accent: #6366F1;
-			--accent-dark: #4F46E5;
-			--card-bg: #334155;
-		}
-
-		body {
-			background-color: var(--bg-primary);
-			color: var(--text-primary);
-			transition: all 0.3s ease;
-		}
-
-		.bg-primary {
-			background-color: var(--bg-primary);
-		}
-
-		.bg-secondary {
-			background-color: var(--bg-secondary);
-		}
-
-		.text-primary {
-			color: var(--text-primary);
-		}
-
-		.text-secondary {
-			color: var(--text-secondary);
-		}
-
-		.accent {
-			color: var(--accent);
-		}
-
-		.bg-accent {
-			background-color: var(--accent);
-		}
-
-		.border-accent {
-			border-color: var(--accent);
-		}
-
-		.card-bg {
-			background-color: var(--card-bg);
-		}
-
-		.theme-selector {
-			position: fixed;
-			bottom: 20px;
-			right: 20px;
-			z-index: 100;
-		}
-
-		.theme-btn {
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			cursor: pointer;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		}
-
-		.theme-options {
-			position: absolute;
-			bottom: 60px;
-			right: 0;
-			display: none;
-			flex-direction: column;
-			gap: 10px;
-		}
-
-		.theme-option {
-			width: 40px;
-			height: 40px;
-			border-radius: 50%;
-			cursor: pointer;
-			border: 2px solid white;
-		}
-
-		.theme-nordic-btn {
-			background: linear-gradient(135deg, #2E3440 50%, #88C0D0 50%);
-		}
-
-		.theme-tokyo-night-btn {
-			background: linear-gradient(135deg, #1A1B26 50%, #7AA2F7 50%);
-		}
-
-		.theme-white-btn {
-			background: linear-gradient(135deg, #FFFFFF 50%, #3B82F6 50%);
-		}
-
-		.theme-dark-btn {
-			background: linear-gradient(135deg, #0F172A 50%, #6366F1 50%);
-		}
-
-		.skill-bar {
-			height: 8px;
-			border-radius: 4px;
-			background-color: var(--bg-secondary);
-			overflow: hidden;
-		}
-
-		.skill-progress {
-			height: 100%;
-			background-color: var(--accent);
-			transition: width 1s ease-in-out;
-		}
-
-		.project-card:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-		}
-
-		.nav-link:hover {
-			color: var(--accent);
-		}
-
-		.cert-badge {
-			position: relative;
-		}
-
-		.cert-badge::after {
-			content: 'Verified';
-			position: absolute;
-			transform: translateX(-50%);
-			top: 100%;
-			left: 50%;
-			background-color: var(--accent-dark);
-			margin-top: 4px;
-			color: white;
-			font-size: 10px;
-			padding: 2px 5px;
-			border-radius: 10px;
-		}
-	</style>
+  <link rel="stylesheet" type="" href="style.css">
 </head>
 
 <body class="theme-nordic">
@@ -202,10 +33,9 @@
 				<a href="#home" class="nav-link text-primary hover:text-accent transition">Home</a>
 				<a href="#about" class="nav-link text-primary hover:text-accent transition">About</a>
 				<a href="#skills" class="nav-link text-primary hover:text-accent transition">Skills</a>
-				<a href="#projects"
-					class="nav-link text-primary hover:text-accent transition">Projects</a>
-				<a href="#contact"
-					class="nav-link text-primary hover:text-accent transition">Contact</a>
+				<a href="#projects" class="nav-link text-primary hover:text-accent transition">Projects</a>
+				<a href="#contact" class="nav-link text-primary hover:text-accent transition">Contact</a>
+				<a href="assets/blogs/blog-home.html" class="nav-link text-primary hover:text-accent transition">Blog</a>
 			</div>
 			<div class="md:hidden">
 				<button id="mobileMenuBtn" class="text-primary">
@@ -219,10 +49,9 @@
 				<a href="#home" class="nav-link text-primary hover:text-accent transition">Home</a>
 				<a href="#about" class="nav-link text-primary hover:text-accent transition">About</a>
 				<a href="#skills" class="nav-link text-primary hover:text-accent transition">Skills</a>
-				<a href="#projects"
-					class="nav-link text-primary hover:text-accent transition">Projects</a>
-				<a href="#contact"
-					class="nav-link text-primary hover:text-accent transition">Contact</a>
+				<a href="#projects" class="nav-link text-primary hover:text-accent transition">Projects</a>
+				<a href="#contact" class="nav-link text-primary hover:text-accent transition">Contact</a>
+				<a href="assets/blogs/blog-home.html" class="nav-link text-primary hover:text-accent transition"></a>
 			</div>
 		</div>
 	</nav>
@@ -453,12 +282,7 @@
 						<i class="fab fa-linux text-4xl mb-2 accent"></i>
 						<span>Linux</span>
 					</div>
-					<div
-						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
-						<i class="fas fa-terminal text-4xl mb-2 accent"></i>
-						<span>Kali Linux</span>
-					</div>
-					<div
+				  <div
 						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
 						<i class="fas fa-network-wired text-4xl mb-2 accent"></i>
 						<span>Wireshark</span>
@@ -478,10 +302,16 @@
 						<i class="fab fa-github text-4xl mb-2 accent"></i>
 						<span>github</span>
 					</div>
+          <div
+						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+						<i class="fab fa-shield text-4xl mb-2 accent"></i>
+						<span>snort</span>
+					</div>           
 				</div>
 			</div>
-		</div>
-	</section>
+     </div>
+    </section>
+
 
 	<!-- Projects Section -->
 	<section id="projects" class="py-20 bg-primary">
@@ -491,93 +321,34 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 				<!-- Project 1 -->
 				<div
-					class="project-card card-bg rounded-lg overflow-hidden shadow-lg transition duration-300">
-					<div class="h-48 overflow-hidden">
-						<img src="assets/project MONOLITH.png"
-							class="w-full h-full object-cover">
-					</div>
-					<div class="p-6">
-						<h3 class="text-xl font-semibold mb-2">Project Monolith</h3>
-						<p class="text-secondary mb-4">A multi-tool suite for Penetration
-							Testing.</p>
-						<div class="flex flex-wrap gap-2 mb-4">
-							<span
-								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Python</span>
-							<span
-								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Javascirpt</span>
-							<span
-								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Pywebview
-							</span>
-						</div>
-						<a href="https://github.com/notme6000/project-monolith.git"
-							class="text-accent font-medium flex items-center">
-							View Project <i class="fas fa-arrow-right ml-2"></i>
-						</a>
-					</div>
-				</div>
-
-				<!-- 				<!-- Project 2 -->
-				<!-- 				<div -->
-				<!-- 					class="project-card card-bg rounded-lg overflow-hidden shadow-lg transition duration-300"> -->
-				<!-- 					<div class="h-48 overflow-hidden"> -->
-				<!-- 						<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" -->
-				<!-- 							alt="Vulnerability Scanner" class="w-full h-full object-cover"> -->
-				<!-- 					</div> -->
-				<!-- 					<div class="p-6"> -->
-				<!-- 						<h3 class="text-xl font-semibold mb-2">Automated Vulnerability Scanner -->
-				<!-- 						</h3> -->
-				<!-- 						<p class="text-secondary mb-4">A custom tool that scans web applications -->
-				<!-- 							for common vulnerabilities like XSS, SQLi, and CSRF.</p> -->
-				<!-- 						<div class="flex flex-wrap gap-2 mb-4"> -->
-				<!-- 							<span -->
-				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Python</span> -->
-				<!-- 							<span -->
-				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Selenium</span> -->
-				<!-- 							<span -->
-				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">OWASP -->
-				<!-- 								ZAP</span> -->
-				<!-- 							<span -->
-				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Docker</span> -->
-				<!-- 						</div> -->
-				<!-- 						<a href="#" class="text-accent font-medium flex items-center"> -->
-				<!-- 							View Project <i class="fas fa-arrow-right ml-2"></i> -->
-				<!-- 						</a> -->
-				<!-- 					</div> -->
-				<!-- 				</div> -->
-				<!--  -->
-				<!-- 				<!-- Project 3 -->
-				<!-- 				<div -->
-				<!-- 					class="project-card card-bg rounded-lg overflow-hidden shadow-lg transition duration-300"> -->
-				<!-- 					<div class="h-48 overflow-hidden"> -->
-				<!-- 						<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" -->
-				<!-- 							alt="Secure Banking App" class="w-full h-full object-cover"> -->
-				<!-- 					</div> -->
-				<!-- 					<div class="p-6"> -->
-				<!-- 						<h3 class="text-xl font-semibold mb-2">Secure Banking Application</h3> -->
-				<!-- 						<p class="text-secondary mb-4">A banking application with end-to-end -->
-				<!-- 							encryption, fraud detection, and secure transaction processing. -->
-				<!-- 						</p> -->
-				<!-- 						<div class="flex flex-wrap gap-2 mb-4"> -->
-				<!-- 							<span -->
-				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Java</span> -->
-				<!-- 							<span -->
-				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Spring -->
-				<!-- 								Boot</span> -->
-				<!-- 							<span -->
-				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">AES-256</span> -->
-				<!-- 							<span -->
-				<!-- 								class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">PCI -->
-				<!-- 								DSS</span> -->
-				<!-- 						</div> -->
-				<!-- 						<a href="#" class="text-accent font-medium flex items-center"> -->
-				<!-- 							View Project <i class="fas fa-arrow-right ml-2"></i> -->
-				<!-- 						</a> -->
-				<!-- 					</div> -->
-				<!-- 				</div> -->
-			</div>
+            class="project-card card-bg rounded-lg overflow-hidden shadow-lg transition duration-300">
+            <div class="h-48 overflow-hidden">
+              <img src="assets/project MONOLITH.png"
+                class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Project Monolith</h3>
+              <p class="text-secondary mb-4">A multi-tool suite for Penetration
+                Testing.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Python</span>
+                <span
+                  class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Javascirpt</span>
+                <span
+                  class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Pywebview
+                </span>
+              </div>
+              <a href="https://github.com/notme6000/project-monolith.git"
+                class="text-accent font-medium flex items-center">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
 
 			<div class="text-center mt-12">
-				<a href="#"
+				<a href="assets/blogs/blog-home.html"
 					class="inline-block border-2 border-accent text-accent px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition">
 					View All Projects
 				</a>
@@ -692,73 +463,6 @@
 		</div>
 	</footer>
 
-	<script>
-		// Theme functionality
-		function changeTheme(theme) {
-			document.body.className = `theme-${theme}`;
-			document.getElementById('themeOptions').style.display = 'none';
-		}
-
-		function toggleThemeOptions() {
-			const themeOptions = document.getElementById('themeOptions');
-			themeOptions.style.display = themeOptions.style.display === 'flex' ? 'none' : 'flex';
-		}
-
-		// Mobile menu functionality
-		document.getElementById('mobileMenuBtn').addEventListener('click', function () {
-			const mobileMenu = document.getElementById('mobileMenu');
-			mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
-		});
-
-		// Close mobile menu when clicking a link
-		document.querySelectorAll('#mobileMenu a').forEach(link => {
-			link.addEventListener('click', function () {
-				document.getElementById('mobileMenu').style.display = 'none';
-			});
-		});
-
-		// Animate skill bars on scroll
-		function animateSkills() {
-			const skillBars = document.querySelectorAll('.skill-progress');
-			skillBars.forEach(bar => {
-				const width = bar.style.width;
-				bar.style.width = '0';
-				setTimeout(() => {
-					bar.style.width = width;
-				}, 100);
-			});
-		}
-
-		// Intersection Observer for skill animation
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					animateSkills();
-					observer.unobserve(entry.target);
-				}
-			});
-		}, {threshold: 0.1});
-
-		const skillsSection = document.getElementById('skills');
-		if (skillsSection) {
-			observer.observe(skillsSection);
-		}
-
-		// Smooth scrolling for anchor links
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-				e.preventDefault();
-				const targetId = this.getAttribute('href');
-				const targetElement = document.querySelector(targetId);
-				if (targetElement) {
-					window.scrollTo({
-						top: targetElement.offsetTop - 80,
-						behavior: 'smooth'
-					});
-				}
-			});
-		});
-	</script>
 </body>
 
 </html>
