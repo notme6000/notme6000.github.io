@@ -1,335 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CyberSec Developer | Portfolio</title>
-	<script src="https://cdn.tailwindcss.com"></script>
-  <script src="script.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" type="" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSec Developer | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="" href="style.css">
+  </head>
 
-<body class="theme-nordic">
-	<!-- Theme Selector -->
-	<div class="theme-selector">
-		<div class="theme-options" id="themeOptions">
-			<div class="theme-option theme-nordic-btn" onclick="changeTheme('nordic')"></div>
-			<div class="theme-option theme-tokyo-night-btn" onclick="changeTheme('tokyo-night')"></div>
-			<div class="theme-option theme-white-btn" onclick="changeTheme('white')"></div>
-			<div class="theme-option theme-dark-btn" onclick="changeTheme('dark')"></div>
-		</div>
-		<div class="theme-btn bg-accent text-white" onclick="toggleThemeOptions()">
-			<i class="fas fa-palette"></i>
-		</div>
-	</div>
+  <body class="theme-nordic">
+    <!-- Theme Selector -->
+    <div class="theme-selector">
+      <div class="theme-options" id="themeOptions">
+        <div class="theme-option theme-nordic-btn" onclick="changeTheme('nordic')"></div>
+        <div class="theme-option theme-tokyo-night-btn" onclick="changeTheme('tokyo-night')"></div>
+        <div class="theme-option theme-white-btn" onclick="changeTheme('white')"></div>
+        <div class="theme-option theme-dark-btn" onclick="changeTheme('dark')"></div>
+      </div>
+      <div class="theme-btn bg-accent text-white" onclick="toggleThemeOptions()">
+        <i class="fas fa-palette"></i>
+      </div>
+    </div>
 
-	<!-- Navigation -->
-	<nav class="bg-secondary py-4 px-6 shadow-lg sticky top-0 z-50">
-		<div class="container mx-auto flex justify-between items-center">
-			<div class="text-2xl font-bold accent">Jithu Suresh</div>
-			<div class="hidden md:flex space-x-8">
-				<a href="#home" class="nav-link text-primary hover:text-accent transition">Home</a>
-				<a href="#about" class="nav-link text-primary hover:text-accent transition">About</a>
-				<a href="#skills" class="nav-link text-primary hover:text-accent transition">Skills</a>
-				<a href="#projects" class="nav-link text-primary hover:text-accent transition">Projects</a>
-				<a href="#contact" class="nav-link text-primary hover:text-accent transition">Contact</a>
-				<a href="assets/blogs/blog-home.html" class="nav-link text-primary hover:text-accent transition">Blog</a>
-			</div>
-			<div class="md:hidden">
-				<button id="mobileMenuBtn" class="text-primary">
-					<i class="fas fa-bars text-2xl"></i>
-				</button>
-			</div>
-		</div>
-		<!-- Mobile Menu -->
-		<div id="mobileMenu" class="hidden md:hidden bg-secondary py-4 px-6 absolute w-full left-0">
-			<div class="flex flex-col space-y-4">
-				<a href="#home" class="nav-link text-primary hover:text-accent transition">Home</a>
-				<a href="#about" class="nav-link text-primary hover:text-accent transition">About</a>
-				<a href="#skills" class="nav-link text-primary hover:text-accent transition">Skills</a>
-				<a href="#projects" class="nav-link text-primary hover:text-accent transition">Projects</a>
-				<a href="#contact" class="nav-link text-primary hover:text-accent transition">Contact</a>
-				<a href="assets/blogs/blog-home.html" class="nav-link text-primary hover:text-accent transition"></a>
-			</div>
-		</div>
-	</nav>
+    <!-- Navigation -->
+    <nav class="bg-secondary py-4 px-6 shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="text-2xl font-bold accent">Jithu Suresh</div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link text-primary hover:text-accent transition">Home</a>
+          <a href="#about" class="nav-link text-primary hover:text-accent transition">About</a>
+          <a href="#skills" class="nav-link text-primary hover:text-accent transition">Skills</a>
+          <a href="#projects" class="nav-link text-primary hover:text-accent transition">Projects</a>
+          <a href="#contact" class="nav-link text-primary hover:text-accent transition">Contact</a>
+          <a href="assets/blogs/blog-home.html" class="nav-link text-primary hover:text-accent transition">Blog</a>
+        </div>
+        <div class="md:hidden">
+          <button id="mobileMenuBtn" class="text-primary">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden bg-secondary py-4 px-6 absolute w-full left-0">
+        <div class="flex flex-col space-y-4">
+          <a href="#home" class="nav-link text-primary hover:text-accent transition">Home</a>
+          <a href="#about" class="nav-link text-primary hover:text-accent transition">About</a>
+          <a href="#skills" class="nav-link text-primary hover:text-accent transition">Skills</a>
+          <a href="#projects" class="nav-link text-primary hover:text-accent transition">Projects</a>
+          <a href="#contact" class="nav-link text-primary hover:text-accent transition">Contact</a>
+          <a href="assets/blogs/blog-home.html" class="nav-link text-primary hover:text-accent transition"></a>
+        </div>
+      </div>
+    </nav>
 
-	<!-- Hero Section -->
-	<section id="home" class="min-h-screen flex items-center bg-secondary">
-		<div class="container mx-auto px-6 py-20">
-			<div class="flex flex-col md:flex-row items-center">
-				<div class="md:w-1/2 mb-10 md:mb-0">
-					<h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span
-							class="accent">Jithu Suresh</span></h1>
-					<h2 class="text-2xl md:text-3xl mb-6 text-secondary">Developer & Cybersecurity
-						Expert</h2>
-					<p class="text-lg mb-8">Certified Penetration Tester (CPT) and Certified Ethical
-						Hacker (CEH).</p>
-					<div class="flex space-x-4">
-						<a href="#contact"
-							class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition">Hire
-							Me</a>
-						<a href="#projects"
-							class="border-2 border-accent text-accent px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition">View
-							Work</a>
-					</div>
-				</div>
-				<div class="md:w-1/2 flex justify-center">
-					<div class="relative">
-						<div
-							class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent">
-							<img src="assets/jithu.jpeg" alt="Profile"
-								class="w-full h-full object-cover">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center bg-secondary">
+      <div class="container mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span
+              class="accent">Jithu Suresh</span></h1>
+            <h2 class="text-2xl md:text-3xl mb-6 text-secondary">Developer & Cybersecurity
+              Expert</h2>
+            <p class="text-lg mb-8">Certified Penetration Tester (CPT) and Certified Ethical
+              Hacker (CEH).</p>
+            <div class="flex space-x-4">
+              <a href="#contact"
+                class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition">Hire
+                Me</a>
+              <a href="#projects"
+                class="border-2 border-accent text-accent px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition">View
+                Work</a>
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <div class="relative">
+              <div
+                class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent">
+                <img src="assets/images/jithu.jpeg" alt="Profile"
+                  class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<!-- About Section -->
-	<section id="about" class="py-20 bg-primary">
-		<div class="container mx-auto px-6">
-			<h2 class="text-3xl font-bold mb-12 text-center accent">About Me</h2>
-			<div class="flex flex-col md:flex-row items-center justify-center">
-				<!--				<div class="md:w-1/3 mb-10 md:mb-0 flex justify-center"> -->
-				<!-- 					<div class="w-64 h-64 rounded-lg overflow-hidden border-2 border-accent"> -->
-				<!-- 						<img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" -->
-				<!-- 							alt="About" class="w-full h-full object-cover"> -->
-				<!-- 					</div> -->
-				<!--				</div> -->
-				<div class="md:w-2/3 md:pl-12">
-					<h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
-					<p class="mb-6 text-secondary">I'm a passionate developer with a strong focus on
-						cybersecurity. My journey began with coding and evolved into securing
-						systems against threats. I hold multiple certifications including CPT
-						(Certified Penetration Tester) and CEH (Certified Ethical Hacker), and
-						I'm committed to building secure applications from the ground up.</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-primary">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center accent">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center justify-center">
+          <!--				<div class="md:w-1/3 mb-10 md:mb-0 flex justify-center"> -->
+          <!-- 					<div class="w-64 h-64 rounded-lg overflow-hidden border-2 border-accent"> -->
+          <!-- 						<img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" -->
+          <!-- 							alt="About" class="w-full h-full object-cover"> -->
+          <!-- 					</div> -->
+          <!--				</div> -->
+          <div class="md:w-2/3 md:pl-12">
+            <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+            <p class="mb-6 text-secondary">I'm a passionate developer with a strong focus on
+              cybersecurity. My journey began with coding and evolved into securing
+              systems against threats. I hold multiple certifications including CPT
+              (Certified Penetration Tester) and CEH (Certified Ethical Hacker), and
+              I'm committed to building secure applications from the ground up.</p>
 
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-						<!-- 						<div class="flex items-start"> -->
-						<!-- 							<div class="mr-4 mt-1 accent"> -->
-						<!-- 								<i class="fas fa-laptop-code text-xl"></i> -->
-						<!-- 							</div> -->
-						<!-- 							<div> -->
-						<!-- 								<h4 class="font-semibold mb-2">Development</h4> -->
-						<!-- 								<p class="text-sm text-secondary">Full-stack development -->
-						<!-- 									with security-first approach using modern -->
-						<!-- 									technologies.</p> -->
-						<!-- 							</div> -->
-						<!-- 						</div> -->
-						<div class="flex items-start">
-							<div class="mr-4 mt-1 accent">
-								<i class="fas fa-shield-alt text-xl"></i>
-							</div>
-							<div>
-								<h4 class="font-semibold mb-2">Security</h4>
-								<p class="text-sm text-secondary">Penetration testing,
-									vulnerability assessment, and security
-									architecture design.</p>
-							</div>
-						</div>
-					</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <!-- 						<div class="flex items-start"> -->
+              <!-- 							<div class="mr-4 mt-1 accent"> -->
+              <!-- 								<i class="fas fa-laptop-code text-xl"></i> -->
+              <!-- 							</div> -->
+              <!-- 							<div> -->
+              <!-- 								<h4 class="font-semibold mb-2">Development</h4> -->
+              <!-- 								<p class="text-sm text-secondary">Full-stack development -->
+              <!-- 									with security-first approach using modern -->
+              <!-- 									technologies.</p> -->
+              <!-- 							</div> -->
+              <!-- 						</div> -->
+              <div class="flex items-start">
+                <div class="mr-4 mt-1 accent">
+                  <i class="fas fa-shield-alt text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">Security</h4>
+                  <p class="text-sm text-secondary">Penetration testing,
+                    vulnerability assessment, and security
+                    architecture design.</p>
+                </div>
+              </div>
+            </div>
 
-					<div class="flex flex-wrap gap-4">
-						<div
-							class="cert-badge bg-accent-dark text-white px-4 py-2 rounded-full text-sm font-medium">
-							CPT
-						</div>
-						<div
-							class="cert-badge bg-accent-dark text-white px-4 py-2 rounded-full text-sm font-medium">
-							CEH
-						</div>
-						<!-- 						<div -->
-						<!-- 							class="bg-accent-dark text-white px-4 py-2 rounded-full text-sm font-medium"> -->
-						<!-- 							OSCP (In Progress) -->
-						<!-- 						</div> -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+            <div class="flex flex-wrap gap-4">
+              <div
+                class="cert-badge bg-accent-dark text-white px-4 py-2 rounded-full text-sm font-medium">
+                CPT
+              </div>
+              <div
+                class="cert-badge bg-accent-dark text-white px-4 py-2 rounded-full text-sm font-medium">
+                CEH
+              </div>
+              <!-- 						<div -->
+              <!-- 							class="bg-accent-dark text-white px-4 py-2 rounded-full text-sm font-medium"> -->
+              <!-- 							OSCP (In Progress) -->
+              <!-- 						</div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<!-- Skills Section -->
-	<section id="skills" class="py-20 bg-secondary">
-		<div class="container mx-auto px-6">
-			<h2 class="text-3xl font-bold mb-12 text-center accent">My Skills</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-secondary">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center accent">My Skills</h2>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				<!-- Development Skills -->
-				<div class="card-bg p-6 rounded-lg shadow-lg">
-					<h3 class="text-xl font-semibold mb-4 flex items-center">
-						<i class="fas fa-code mr-2 accent"></i>
-						Development
-					</h3>
-					<div class="space-y-4">
-						<!-- 						<div> -->
-						<!-- 							<div class="flex justify-between mb-1"> -->
-						<!-- 								<span>JavaScript/TypeScript</span> -->
-						<!-- 								<span>95%</span> -->
-						<!-- 							</div> -->
-						<!-- 							<div class="skill-bar"> -->
-						<!-- 								<div class="skill-progress" style="width: 95%"></div> -->
-						<!-- 							</div> -->
-						<!-- 						</div> -->
-						<div>
-							<div class="flex justify-between mb-1">
-								<span>Python</span>
-								<span>90%</span>
-							</div>
-							<div class="skill-bar">
-								<div class="skill-progress" style="width: 90%"></div>
-							</div>
-						</div>
-						<div>
-							<div class="flex justify-between mb-1">
-								<span>C</span>
-								<span>50%</span>
-							</div>
-							<div class="skill-bar">
-								<div class="skill-progress" style="width: 50%"></div>
-							</div>
-						</div>
-						<div>
-							<div class="flex justify-between mb-1">
-								<span>bash</span>
-								<span>60%</span>
-							</div>
-							<div class="skill-bar">
-								<div class="skill-progress" style="width: 60%"></div>
-							</div>
-						</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Development Skills -->
+          <div class="card-bg p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-code mr-2 accent"></i>
+              Development
+            </h3>
+            <div class="space-y-4">
+              <!-- 						<div> -->
+              <!-- 							<div class="flex justify-between mb-1"> -->
+              <!-- 								<span>JavaScript/TypeScript</span> -->
+              <!-- 								<span>95%</span> -->
+              <!-- 							</div> -->
+              <!-- 							<div class="skill-bar"> -->
+              <!-- 								<div class="skill-progress" style="width: 95%"></div> -->
+              <!-- 							</div> -->
+              <!-- 						</div> -->
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>Python</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>C</span>
+                  <span>50%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 50%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>bash</span>
+                  <span>60%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 60%"></div>
+                </div>
+              </div>
 
-						<!-- 						<div> -->
-						<!-- 							<div class="flex justify-between mb-1"> -->
-						<!-- 								<span>React/Node.js</span> -->
-						<!-- 								<span>85%</span> -->
-						<!-- 							</div> -->
-						<!-- 							<div class="skill-bar"> -->
-						<!-- 								<div class="skill-progress" style="width: 85%"></div> -->
-						<!-- 							</div> -->
-						<!-- 						</div> -->
-						<div>
-							<div class="flex justify-between mb-1">
-								<span>SQL/NoSQL</span>
-								<span>80%</span>
-							</div>
-							<div class="skill-bar">
-								<div class="skill-progress" style="width: 80%"></div>
-							</div>
-						</div>
-					</div>
-				</div>
+              <!-- 						<div> -->
+              <!-- 							<div class="flex justify-between mb-1"> -->
+              <!-- 								<span>React/Node.js</span> -->
+              <!-- 								<span>85%</span> -->
+              <!-- 							</div> -->
+              <!-- 							<div class="skill-bar"> -->
+              <!-- 								<div class="skill-progress" style="width: 85%"></div> -->
+              <!-- 							</div> -->
+              <!-- 						</div> -->
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>SQL/NoSQL</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<!-- Security Skills -->
-				<div class="card-bg p-6 rounded-lg shadow-lg">
-					<h3 class="text-xl font-semibold mb-4 flex items-center">
-						<i class="fas fa-shield-alt mr-2 accent"></i>
-						Cybersecurity
-					</h3>
-					<div class="space-y-4">
-						<div>
-							<div class="flex justify-between mb-1">
-								<span>Penetration Testing</span>
-								<span>95%</span>
-							</div>
-							<div class="skill-bar">
-								<div class="skill-progress" style="width: 95%"></div>
-							</div>
-						</div>
-						<div>
-							<div class="flex justify-between mb-1">
-								<span>Vulnerability Assessment</span>
-								<span>90%</span>
-							</div>
-							<div class="skill-bar">
-								<div class="skill-progress" style="width: 90%"></div>
-							</div>
-						</div>
-						<div>
-							<div class="flex justify-between mb-1">
-								<span>Network Security</span>
-								<span>85%</span>
-							</div>
-							<div class="skill-bar">
-								<div class="skill-progress" style="width: 85%"></div>
-							</div>
-						</div>
-						<div>
-							<div class="flex justify-between mb-1">
-								<span>Security Architecture</span>
-								<span>80%</span>
-							</div>
-							<div class="skill-bar">
-								<div class="skill-progress" style="width: 80%"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+          <!-- Security Skills -->
+          <div class="card-bg p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-shield-alt mr-2 accent"></i>
+              Cybersecurity
+            </h3>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>Penetration Testing</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 95%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>Vulnerability Assessment</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>Network Security</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span>Security Architecture</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-			<!-- Tools Section -->
-			<div class="mt-12 card-bg p-6 rounded-lg shadow-lg">
-				<h3 class="text-xl font-semibold mb-6 flex items-center">
-					<i class="fas fa-tools mr-2 accent"></i>
-					Tools & Technologies
-				</h3>
-				<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-					<div
-						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
-						<i class="fab fa-linux text-4xl mb-2 accent"></i>
-						<span>Linux</span>
-					</div>
-				  <div
-						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
-						<i class="fas fa-network-wired text-4xl mb-2 accent"></i>
-						<span>Wireshark</span>
-					</div>
-					<div
-						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
-						<i class="fas fa-bug text-4xl mb-2 accent"></i>
-						<span>Burp Suite</span>
-					</div>
-					<div
-						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
-						<i class="fab fa-docker text-4xl mb-2 accent"></i>
-						<span>Docker</span>
-					</div>
-					<div
-						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
-						<i class="fab fa-github text-4xl mb-2 accent"></i>
-						<span>github</span>
-					</div>
-          <div
-						class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
-						<i class="fab fa-shield text-4xl mb-2 accent"></i>
-						<span>snort</span>
-					</div>           
-				</div>
-			</div>
-     </div>
+        <!-- Tools Section -->
+        <div class="mt-12 card-bg p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-6 flex items-center">
+            <i class="fas fa-tools mr-2 accent"></i>
+            Tools & Technologies
+          </h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div
+              class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+              <i class="fab fa-linux text-4xl mb-2 accent"></i>
+              <span>Linux</span>
+            </div>
+            <div
+              class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+              <i class="fas fa-network-wired text-4xl mb-2 accent"></i>
+              <span>Wireshark</span>
+            </div>
+            <div
+              class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+              <i class="fas fa-bug text-4xl mb-2 accent"></i>
+              <span>Burp Suite</span>
+            </div>
+            <div
+              class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+              <i class="fab fa-docker text-4xl mb-2 accent"></i>
+              <span>Docker</span>
+            </div>
+            <div
+              class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+              <i class="fab fa-github text-4xl mb-2 accent"></i>
+              <span>github</span>
+            </div>
+            <div
+              class="flex flex-col items-center p-4 rounded-lg hover:bg-accent hover:bg-opacity-10 transition">
+              <i class="fab fa-shield text-4xl mb-2 accent"></i>
+              <span>snort</span>
+            </div>           
+          </div>
+        </div>
+      </div>
     </section>
 
 
-	<!-- Projects Section -->
-	<section id="projects" class="py-20 bg-primary">
-		<div class="container mx-auto px-6">
-			<h2 class="text-3xl font-bold mb-12 text-center accent">My Projects</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-primary">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center accent">My Projects</h2>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<!-- Project 1 -->
-				<div
-            class="project-card card-bg rounded-lg overflow-hidden shadow-lg transition duration-300">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Project 1 -->
+
+          <div class="project-card card-bg rounded-lg overflow-hidden shadow-lg transition duration-300">
             <div class="h-48 overflow-hidden">
-              <img src="assets/project MONOLITH.png"
+              <img src="assets/images/project MONOLITH.png"
                 class="w-full h-full object-cover">
             </div>
+
             <div class="p-6">
               <h3 class="text-xl font-semibold mb-2">Project Monolith</h3>
-              <p class="text-secondary mb-4">A multi-tool suite for Penetration
-                Testing.</p>
+              <p class="text-secondary mb-4">A multi-tool suite for Penetration Testing.</p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span
                   class="bg-accent-dark text-white px-3 py-1 rounded-full text-xs">Python</span>
@@ -345,124 +346,146 @@
               </a>
             </div>
           </div>
+
+          <!-- Project 2 -->
+          <div class="project-card card-bg rounded-lg overflow-hidden shadow-lg transition duration-300">
+            <div class="h-48 overflow-hidden">
+              <img src="assets/images/vulnhub-logo-1.jpg"
+                class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Vulnhub Machines</h3>
+              <p class="text-secondary mb-4">Documented step-by-step penetration testing of vulnerable machines from VulnHub, demonstrating skills in reconnaissance, exploitation, and privilege escalation.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+              </div>
+              <a href="assets/blogs/vulnhub/vulnhub.html"
+                class="text-accent font-medium flex items-center">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- this div should not be moved or removed --->
         </div>
 
-			<div class="text-center mt-12">
-				<a href="assets/blogs/blog-home.html"
-					class="inline-block border-2 border-accent text-accent px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition">
-					View All Projects
-				</a>
-			</div>
-		</div>
-	</section>
 
-	<!-- Contact Section -->
-	<section id="contact" class="py-20 bg-secondary">
-		<div class="container mx-auto px-6">
-			<h2 class="text-3xl font-bold mb-12 text-center accent">Get In Touch</h2>
+        <div class="text-center mt-12">
+          <a href="assets/blogs/blog-home.html"
+            class="inline-block border-2 border-accent text-accent px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition">
+            View All Projects
+          </a>
+        </div>
+      </div>
+    </section>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-				<div>
-					<h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-					<div class="space-y-6">
-						<div class="flex items-start">
-							<div class="mr-4 mt-1 accent">
-								<i class="fas fa-envelope text-xl"></i>
-							</div>
-							<div>
-								<h4 class="font-medium mb-1">Email</h4>
-								<p class="text-secondary">sureshjithu9400@gmail.com</p>
-							</div>
-						</div>
-						<!-- 						<div class="flex items-start"> -->
-						<!-- 							<div class="mr-4 mt-1 accent"> -->
-						<!-- 								<i class="fas fa-phone-alt text-xl"></i> -->
-						<!-- 							</div> -->
-						<!-- 							<div> -->
-						<!-- 								<h4 class="font-medium mb-1">Phone</h4> -->
-						<!-- 								<p class="text-secondary">+1 (555) 123-4567</p> -->
-						<!-- 							</div> -->
-						<!-- 						</div> -->
-						<!-- 						<div class="flex items-start"> -->
-						<!-- 							<div class="mr-4 mt-1 accent"> -->
-						<!-- 								<i class="fas fa-map-marker-alt text-xl"></i> -->
-						<!-- 							</div> -->
-						<!-- 							<div> -->
-						<!-- 								<h4 class="font-medium mb-1">Location</h4> -->
-						<!-- 								<p class="text-secondary">San Francisco, CA</p> -->
-						<!-- 							</div> -->
-						<!-- 						</div> -->
-					</div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-secondary">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center accent">Get In Touch</h2>
 
-					<div class="mt-10">
-						<h3 class="text-xl font-semibold mb-6">Follow Me</h3>
-						<div class="flex space-x-4">
-							<a href="https://github.com/notme6000"
-								class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
-								<i class="fab fa-github"></i>
-							</a>
-							<a href="https://www.linkedin.com/in/jithu-suresh-931321274/"
-								class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
-								<i class="fab fa-linkedin-in"></i>
-							</a>
-							<a href="https://x.com/notmee6000"
-								class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
-								<i class="fab fa-twitter"></i>
-							</a>
-							<a href="https://news.ycombinator.com/user?id=akira_satou"
-								class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
-								<i class="fab fa-hacker-news"></i>
-							</a>
-						</div>
-					</div>
-				</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="mr-4 mt-1 accent">
+                  <i class="fas fa-envelope text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">Email</h4>
+                  <p class="text-secondary">sureshjithu9400@gmail.com</p>
+                  <p class="text-secondary">jithusureshofficial@gmail.com</p>
+                </div>
+              </div>
+              <!-- 						<div class="flex items-start"> -->
+              <!-- 							<div class="mr-4 mt-1 accent"> -->
+              <!-- 								<i class="fas fa-phone-alt text-xl"></i> -->
+              <!-- 							</div> -->
+              <!-- 							<div> -->
+              <!-- 								<h4 class="font-medium mb-1">Phone</h4> -->
+              <!-- 								<p class="text-secondary">+1 (555) 123-4567</p> -->
+              <!-- 							</div> -->
+              <!-- 						</div> -->
+              <!-- 						<div class="flex items-start"> -->
+              <!-- 							<div class="mr-4 mt-1 accent"> -->
+              <!-- 								<i class="fas fa-map-marker-alt text-xl"></i> -->
+              <!-- 							</div> -->
+              <!-- 							<div> -->
+              <!-- 								<h4 class="font-medium mb-1">Location</h4> -->
+              <!-- 								<p class="text-secondary">San Francisco, CA</p> -->
+              <!-- 							</div> -->
+              <!-- 						</div> -->
+            </div>
 
-				<div>
-					<h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
-					<form class="space-y-6" action="https://formspree.io/f/mzzvpdlw" method="POST">
-						<div>
-							<label for="name" class="block mb-2">Your Name</label>
-							<input type="text" id="name" name="name"
-								class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent">
-						</div>
-						<div>
-							<label for="email" class="block mb-2">Your Email</label>
-							<input type="email" id="email" name="email"
-								class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent">
-						</div>
-						<div>
-							<label for="subject" class="block mb-2">Subject</label>
-							<input type="text" id="subject" name="subject"
-								class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent">
-						</div>
-						<div>
-							<label for="message" class="block mb-2">Message</label>
-							<textarea id="message" rows="5" name="message"
-								class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
-						</div>
-						<button type="submit"
-							class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition w-full">
-							Send Message
-						</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
+            <div class="mt-10">
+              <h3 class="text-xl font-semibold mb-6">Follow Me</h3>
+              <div class="flex space-x-4">
+                <a href="https://github.com/notme6000"
+                  class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jithu-suresh-931321274/"
+                  class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/notmee6000"
+                  class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://news.ycombinator.com/user?id=akira_satou"
+                  class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center hover:bg-accent-dark transition">
+                  <i class="fab fa-hacker-news"></i>
+                </a>
+              </div>
+            </div>
+          </div>
 
-	<!-- Footer -->
-	<footer class="bg-primary py-8">
-		<div class="container mx-auto px-6">
-			<div class="flex flex-col md:flex-row justify-between items-center">
-				<div class="text-xl font-bold mb-4 md:mb-0 accent">CyberSec Developer</div>
-				<div class="text-secondary text-sm">
-					&copy; 2023 All Rights Reserved | Designed with <i
-						class="fas fa-heart accent"></i> by Me
-				</div>
-			</div>
-		</div>
-	</footer>
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+            <form class="space-y-6" action="https://formspree.io/f/mzzvpdlw" method="POST">
+              <div>
+                <label for="name" class="block mb-2">Your Name</label>
+                <input type="text" id="name" name="name"
+                  class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent">
+              </div>
+              <div>
+                <label for="email" class="block mb-2">Your Email</label>
+                <input type="email" id="email" name="email"
+                  class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent">
+              </div>
+              <div>
+                <label for="subject" class="block mb-2">Subject</label>
+                <input type="text" id="subject" name="subject"
+                  class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent">
+              </div>
+              <div>
+                <label for="message" class="block mb-2">Message</label>
+                <textarea id="message" rows="5" name="message"
+                  class="w-full px-4 py-3 rounded-lg bg-primary border border-accent focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+              </div>
+              <button type="submit"
+                class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition w-full">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</body>
+    <!-- Footer -->
+    <footer class="bg-primary py-8">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-xl font-bold mb-4 md:mb-0 accent">CyberSec Developer</div>
+          <div class="text-secondary text-sm">
+            &copy; 2023 All Rights Reserved | Designed with <i
+              class="fas fa-heart accent"></i> by Me
+          </div>
+        </div>
+      </div>
+    </footer>
+    </div>
+  </body>
 
 </html>
